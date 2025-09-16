@@ -1,0 +1,229 @@
+/* 根变量定义：方便统一修改颜色和字体 */
+:root {
+    --primary-color: #007bff;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --grey-color: #6c757d;
+    --white-color: #ffffff;
+    --body-bg: var(--white-color);
+    --text-color: var(--dark-color);
+    --card-bg: var(--white-color);
+    --card-border: #e9ecef;
+    --header-shadow: rgba(0,0,0,0.05);
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* ✨ 深色模式的颜色变量 ✨ */
+html[data-theme='dark'] {
+    --dark-color: #f8f9fa;
+    --light-color: #212529;
+    --grey-color: #adb5bd;
+    --white-color: #121212;
+    --body-bg: #121212;
+    --text-color: #f8f9fa;
+    --card-bg: #1e1e1e;
+    --card-border: #333;
+    --header-shadow: rgba(255,255,255,0.1);
+}
+
+/* 全局重置和基础样式 */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    background-color: var(--body-bg); /* 应用变量 */
+    color: var(--text-color); /* 应用变量 */
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* 导航栏 */
+.main-header {
+    background: var(--body-bg); /* 应用变量 */
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px var(--header-shadow); /* 应用变量 */
+    transition: background-color var(--transition-speed) ease;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--text-color); /* 应用变量 */
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--grey-color);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* 开关样式 */
+.settings-switches {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.language-switch {
+    display: flex;
+    background: var(--light-color);
+    border-radius: 20px;
+    padding: 4px;
+}
+
+.lang-btn {
+    padding: 2px 10px;
+    color: var(--grey-color);
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+}
+
+.lang-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--grey-color);
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+#theme-toggle:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+
+/* 内容区域 */
+.hero, .content-section.bg-light {
+    background-color: var(--light-color); /* 应用变量 */
+    transition: background-color var(--transition-speed) ease;
+}
+
+.hero {padding: 6rem 0; text-align: center;}
+.hero-title {font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700;}
+.hero-subtitle {font-size: 1.25rem; color: var(--grey-color); max-width: 600px; margin: 0 auto;}
+.content-section {padding: 5rem 0;}
+.section-title {text-align: center; font-size: 2.5rem; margin-bottom: 3rem; font-weight: 600; color: var(--text-color);}
+
+/* 关于我 About Me */
+.about-content {display: flex; align-items: center; gap: 3rem;}
+.about-text {flex: 2;}
+.about-image {flex: 1; max-width: 250px;}
+.about-image img {width: 100%; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.1);}
+
+/* 项目 Projects */
+.project-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;}
+.project-card {
+    background: var(--card-bg); /* 应用变量 */
+    border: 1px solid var(--card-border); /* 应用变量 */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background-color var(--transition-speed) ease;
+}
+.project-card:hover {transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1);}
+.project-image {width: 100%; height: 200px; object-fit: cover;}
+.project-card h3 {font-size: 1.25rem; margin: 1.5rem 1.5rem 0.5rem 1.5rem; color: var(--text-color);}
+.project-card p {color: var(--grey-color); padding: 0 1.5rem; font-size: 0.9rem;}
+.project-link {display: inline-block; margin: 1rem 1.5rem 1.5rem 1.5rem; color: var(--primary-color); text-decoration: none; font-weight: 500;}
+
+/* ✨ 新增的CV列表样式 ✨ */
+.cv-container {
+    max-width: 800px; /* 让列表内容居中且不过宽 */
+    margin: 0 auto;
+}
+
+.cv-item {
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--primary-color);
+    position: relative;
+    margin-bottom: 2.5rem; /* 每个条目之间的间距 */
+}
+
+/* 用伪元素在时间线上创建圆点 */
+.cv-item::before {
+    content: '';
+    position: absolute;
+    left: -9px; /* (3px边框宽度 / 2) + 6px半径 = 7.5px，微调至美观 */
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 3px solid var(--body-bg); /* 用背景色做边框，产生悬浮感 */
+}
+
+.cv-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.cv-meta {
+    color: var(--grey-color);
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.cv-description {
+    line-height: 1.6;
+}
+
+/* 联系 Contact */
+.social-links {margin-top: 2rem;}
+.social-links a {text-decoration: none; color: var(--primary-color); border: 1px solid var(--primary-color); padding: 0.5rem 1.5rem; border-radius: 20px; margin: 0 0.5rem; transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;}
+.social-links a:hover {background-color: var(--primary-color); color: var(--white-color);}
+
+/* 页脚 Footer */
+.main-footer {background: var(--light-color); color: var(--grey-color); text-align: center; padding: 2rem 0; font-size: 0.9rem; transition: background-color var(--transition-speed) ease;}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero-title {font-size: 2.5rem;}
+    .main-header .container {flex-direction: column; gap: 1rem;}
+    .about-content {flex-direction: column; text-align: center;}
+}
