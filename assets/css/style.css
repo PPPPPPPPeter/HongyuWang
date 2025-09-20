@@ -227,3 +227,69 @@ body {
     .main-header .container {flex-direction: column; gap: 1rem;}
     .about-content {flex-direction: column; text-align: center;}
 }
+
+
+/* Hero区域头像样式 */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-avatar {
+    flex: 0 0 auto;
+}
+
+.avatar-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transition: transform var(--transition-speed) ease;
+}
+
+.avatar-img:hover {
+    transform: scale(1.05);
+}
+
+/* 导航激活状态 */
+.main-nav a.active {
+    color: var(--primary-color);
+}
+
+/* 响应式设计更新 */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .avatar-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .main-header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
