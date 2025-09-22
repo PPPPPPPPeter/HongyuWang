@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 主题切换 (深色/浅色模式) ---
+    // ---(深色/浅色模式) ---
     const themeToggle = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme');
     const htmlEl = document.documentElement;
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 页面加载时，应用保存的语言或默认语言
+    // 应用保存的语言或默认语言
     const savedLang = localStorage.getItem('language') || 'zh';
     switchLanguage(savedLang);
 

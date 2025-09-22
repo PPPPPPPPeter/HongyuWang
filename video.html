@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Demo - Hongyu Wang</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .video-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #000;
+    }
+
+    .video-header {
+      background: var(--dark-color);
+      color: white;
+      padding: 1rem 0;
+    }
+
+    .video-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-btn {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      transition: background var(--transition-speed) ease;
+    }
+
+    .back-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .video-player {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .video-player video {
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    .video-info {
+      background: var(--dark-color);
+      color: white;
+      padding: 2rem 0;
+    }
+
+    .video-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .video-description {
+      color: #ccc;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="video-container">
+  <div class="video-header">
+    <div class="container">
+      <h1 class="video-title">Project Demo</h1>
+      <a href="index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
+        </svg>
+        Back to Projects
+      </a>
+    </div>
+  </div>
+
+  <div class="video-player">
+    <video controls autoplay id="projectVideo">
+      <source src="" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="video-info">
+    <div class="container">
+      <h2 class="video-title">Dynamic and Static Analysis-Driven Data Structures Visualization System</h2>
+      <p class="video-description">
+        This demonstration showcases the Java algorithm learning system designed for beginners.
+        The system utilizes MVC pattern with JavaFX framework and Javaparser library to provide
+        real-time visualization of data structures and their corresponding code execution processes.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 获取URL参数中的视频源
+  const urlParams = new URLSearchParams(window.location.search);
+  const videoSrc = urlParams.get('src');
+
+  if (videoSrc) {
+    const video = document.getElementById('projectVideo');
+    video.src = videoSrc;
+  }
+</script>
+
+</body>
+</html>
