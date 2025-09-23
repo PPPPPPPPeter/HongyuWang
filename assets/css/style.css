@@ -1,4 +1,4 @@
-/* 统一修改颜色和字体 */
+
 :root {
     --primary-color: #66A2D8FF;
     --dark-color: #212529;
@@ -14,7 +14,7 @@
     --transition-speed: 0.3s;
 }
 
-/* ✨ 深色模式的颜色变量 ✨ */
+
 html[data-theme='dark'] {
     --dark-color: #f8f9fa;
     --light-color: #212529;
@@ -41,8 +41,8 @@ html {
 body {
     font-family: var(--font-family);
     line-height: 1.7;
-    background-color: var(--body-bg); /* 应用变量 */
-    color: var(--text-color); /* 应用变量 */
+    background-color: var(--body-bg);
+    color: var(--text-color);
     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
@@ -54,12 +54,12 @@ body {
 
 /* 导航栏 */
 .main-header {
-    background: var(--body-bg); /* 应用变量 */
+    background: var(--body-bg);
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 4px var(--header-shadow); /* 应用变量 */
+    box-shadow: 0 2px 4px var(--header-shadow);
     transition: background-color var(--transition-speed) ease;
 }
 
@@ -72,7 +72,7 @@ body {
 .logo {
     font-weight: bold;
     font-size: 1.5rem;
-    color: var(--text-color); /* 应用变量 */
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -93,7 +93,7 @@ body {
     color: var(--primary-color);
 }
 
-/* 开关样式 */
+
 .settings-switches {
     display: flex;
     align-items: center;
@@ -179,15 +179,15 @@ body {
 .project-image-container {
     position: relative;
     overflow: hidden;
-    height: 250px; /* 固定容器高度 */
-    background: #f8f9fa; /* 添加背景色以防图片加载失败 */
+    height: 250px;
+    background: #f8f9fa;
 }
 
 .project-image {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 改为 contain 以显示完整图片 */
-    object-position: center; /* 居中显示 */
+    object-fit: contain;
+    object-position: center;
     transition: transform var(--transition-speed) ease;
 }
 
@@ -261,7 +261,7 @@ body {
     height: 16px;
 }
 
-/* 响应式设计 */
+
 @media (max-width: 768px) {
     .project-grid {
         grid-template-columns: 1fr;
@@ -269,7 +269,7 @@ body {
     }
 
     .project-image-container {
-        height: 200px; /* 移动端稍微降低高度 */
+        height: 200px;
     }
 
     .project-card h3 {
@@ -382,7 +382,7 @@ body {
     color: var(--primary-color);
 }
 
-/* 响应式设计更新 */
+
 @media (max-width: 768px) {
     .hero-content {
         flex-direction: column;
@@ -489,7 +489,7 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(80px, -50%); /* 只设置初始位置 */
+    transform: translate(80px, -50%);
     display: flex;
     align-items: center;
     gap: 0.5rem;
